@@ -23,6 +23,15 @@ package_name <- argv[1]
 library(utils)
 library(methods)
 library(roxygen2)
+
+# Load data, in case the package has some 
+if( dir.exists(paste0(package_name,"/data")) ) {
+  dfiles <- list.files(paste0(package_name,"/data"))
+  for( d in dfiles ) {
+    load(paste0(package_name,"/data/",d))
+  }}
+
+# Generate documentation (.Rd files)
 roxygenize(package_name)
 
 # Build the package
