@@ -10,7 +10,7 @@
 library("RPostgreSQL")
 library("openxlsx")
 
-NROWS <- 100
+NROWS <- 400
 XLSXFILE <- "data/vsshp_synteettinen_raakadata.xlsx"
 
 
