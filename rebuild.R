@@ -1,20 +1,19 @@
 #!/usr/bin/Rscript
 
-# Refresh and re-compile an R package given as the first argument
-
-# To install, issue 'install' as a second command line argument. 
-# (Run with sudo rights to install the package for all users.)
-
 # Author(s)     : Arho Virkki
 # Copyright     : Turku University Hospital
 # Original date : 2017-06-05
-
 
 # Check the first argument
 argv <- commandArgs(TRUE)
 
 if( length(argv) == 0 ) {
-  cat("# Please give the package name as an argument.\n")
+  cat("# Please give the package name as the first argument and\n")
+  cat("# optionally 'install' as the second argument. Run with sudo\n")
+  cat("# to install the package for all users.\n")
+  cat("#\n")
+  cat("# Example: ./rebuild.R <pakagename> install.\n")
+  cat("\n")
   quit(save="no")
 }
 package_name <- argv[1]
